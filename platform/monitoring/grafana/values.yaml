@@ -7,4 +7,4 @@ ingress:
   enabled: true
   ingressClassName: traefik
   hosts:
-    - grafana.192.168.159.130.nip.io
+    - grafana.home

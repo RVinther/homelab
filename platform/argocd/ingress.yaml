@@ -1,4 +1,4 @@
-apiVersion: networking.k8s.io/v1
+iapiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: argocd
@@ -6,7 +6,7 @@ metadata:
 spec:
   ingressClassName: traefik
   rules:
-    - host: argocd.192.168.159.130.nip.io
+    - host: argocd.home
       http:
         paths:
           - path: /
