@@ -11,66 +11,65 @@ data:
 
   services.yaml: |
     - Infrastructure:
-    - ArgoCD:
-        href: http://argocd.home
-        icon: argo-cd.png
+      - ArgoCD:
+          href: http://argocd.home
+          icon: argo-cd.png
 
-    - Homepage:
-        href: http://homepage.home
-        icon: homepage.png
+      - Homepage:
+          href: http://homepage.home
+          icon: homepage.png
 
-    - Router:
-        href: http://192.168.87.1
-        icon: router.png
+      - Router:
+          href: http://192.168.87.1
+          icon: router.png
 
-- Monitoring:
-    - Grafana:
-        href: http://grafana.home
-        icon: grafana.png
+    - Monitoring:
+      - Grafana:
+          href: http://grafana.home
+          icon: grafana.png
 
-    - Logs:
-        href: http://grafana.home
-        icon: loki.png
+      - Logs:
+          href: http://grafana.home
+          icon: loki.png
 
-    - Metrics:
-        href: http://grafana.home
-        icon: prometheus.png
+      - Metrics:
+          href: http://grafana.home
+          icon: prometheus.png
 
-- Networking:
-    - Pi-hole:
-        href: http://192.168.87.60/admin
-        icon: pi-hole.png
+    - Networking:
+      - Pi-hole:
+          href: http://192.168.87.60/admin
+          icon: pi-hole.png
 
-    - Tailscale:
-        href: https://login.tailscale.com/admin
-        icon: tailscale.png
+      - Tailscale:
+          href: https://login.tailscale.com/admin
+          icon: tailscale.png
 
-- Management:
-    - GitHub:
-        href: https://github.com/RVinther/homelab
-        icon: github.png
+    - Management:
+      - GitHub:
+          href: https://github.com/RVinther/homelab
+          icon: github.png
 
-    - ChatGPT:
-        href: https://chatgpt.com
-        icon: chatgpt.png
+      - ChatGPT:
+          href: https://chatgpt.com
+          icon: chatgpt.png
 
-    - Reddit:
-        href: https://reddit.com
-        icon: reddit.png
+      - Reddit:
+          href: https://reddit.com
+          icon: reddit.png
 
-- Daily:
-    - YouTube:
-        href: https://youtube.com
-        icon: youtube.png
+    - Daily:
+      - YouTube:
+          href: https://youtube.com
+          icon: youtube.png
 
-    - Gmail:
-        href: https://mail.google.com
-        icon: gmail.png
+      - Gmail:
+          href: https://mail.google.com
+          icon: gmail.png
 
-    - Calendar:
-        href: https://calendar.google.com
-        icon: google-calendar.png
-        description: Schedule
+      - Calendar:
+          href: https://calendar.google.com
+          icon: google-calendar.png
 
   widgets.yaml: |
     - search:
