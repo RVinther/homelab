@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: homepage-config
+data:
+  settings.yaml: |
+    title: Mathias Homelab
+    theme: dark
+    color: slate
+    headerStyle: clean
+
+  services.yaml: |
+    - Infrastructure:
+        - ArgoCD:
+            href: http://argocd.home
+            icon: argo-cd.png
+
+        - Grafana:
+            href: http://grafana.home
+            icon: grafana.png
+
+        - Pi-hole:
+            href: http://192.168.87.60/admin
+            icon: pi-hole.png
+
+  widgets.yaml: |
+    - search:
+        provider: google
+        target: _blank
+
+    - datetime:
+        text_size: xl

@@ -25,4 +25,5 @@ spec:
               mountPath: /app/config
       volumes:
         - name: config
-          emptyDir: {}
+          configMap:
+            name: homepage-config
