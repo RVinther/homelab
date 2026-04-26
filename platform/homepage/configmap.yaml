@@ -79,5 +79,4 @@ data:
     - datetime:
         text_size: xl
 
-  bookmarks.yaml: | 
-    []
+  bookmarks.yaml: |
