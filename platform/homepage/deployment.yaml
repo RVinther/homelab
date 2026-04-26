@@ -33,6 +33,10 @@ spec:
               mountPath: /app/config/widgets.yaml
               subPath: widgets.yaml
 
+            - name: config
+              mountPath: /app/config/bookmarks.yaml
+              subPath: bookmarks.yaml
+
             - name: logs
               mountPath: /app/config/logs
 
