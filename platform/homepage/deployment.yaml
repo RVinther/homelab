@@ -27,3 +27,6 @@ spec:
         - name: config
           configMap:
             name: homepage-config
+
+        - name: logs
+          emptyDir{}
