@@ -38,11 +38,11 @@ data:
 
     - Networking:
       - Pi-hole:
-          href: http://192.168.87.60/admin
+          href: http://192.168.87.60:8081/admin/
           icon: pi-hole.png
 
       - Tailscale:
-          href: https://login.tailscale.com/admin
+          href: https://tailscale.com
           icon: tailscale.png
 
     - Management:
