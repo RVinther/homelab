@@ -22,6 +22,26 @@ data:
         - Pi-hole:
             href: http://192.168.87.60/admin
             icon: pi-hole.png
+    - Socials:
+        - GitHub:
+            href: https://www.github.com/RVinther/homelab/
+            icon: github.png
+        
+        - Reddit:
+            href: https://www.reddit.com
+            icon: reddit.png
+
+        - YouTube:
+            href: https://www.youtube.com
+            icon: youtube.png
+    - Management:
+        - ChatGPT:
+            href: https://www.chatgpt.com
+            icon: chatgpt.png
+        
+        - Tailscale:
+            href: https://www.login.tailscale.com/admin/
+            icon: tailscale.png
 
   widgets.yaml: |
     - search:
