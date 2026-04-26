@@ -22,11 +22,24 @@ spec:
               value: homepage.home
           volumeMounts:
             - name: config
-              mountPath: /app/config
+              mountPath: /app/config/settings.yaml
+              subPath: settings.yaml
+
+            - name: config
+              mountPath: /app/config/services.yaml
+              subPath: services.yaml
+
+            - name: config
+              mountPath: /app/config/widgets.yaml
+              subPath: widgets.yaml
+
+            - name: logs
+              mountPath: /app/config/logs
+
       volumes:
         - name: config
           configMap:
             name: homepage-config
 
         - name: logs
-          emptyDir{}
+          emptyDir: {}
