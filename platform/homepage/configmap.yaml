@@ -69,7 +69,7 @@ data:
 
       - SDE:
           href: https://learn.sde.dk/login/index.php
-          icon: graduation-cap.png
+          icon: server.png
 
   widgets.yaml: |
     - search:
