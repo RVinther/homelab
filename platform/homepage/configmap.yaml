@@ -15,14 +15,6 @@ data:
           href: http://argocd.home
           icon: argo-cd.png
 
-      - Homepage:
-          href: http://homepage.home
-          icon: homepage.png
-
-      - Router:
-          href: http://192.168.87.1
-          icon: router.png
-
     - Monitoring:
       - Grafana:
           href: http://grafana.home
@@ -45,6 +37,10 @@ data:
           href: https://tailscale.com
           icon: tailscale.png
 
+      - Router:
+          href: http://192.168.87.1
+          icon: router.png
+
     - Management:
       - GitHub:
           href: https://github.com/RVinther/homelab
@@ -53,10 +49,6 @@ data:
       - ChatGPT:
           href: https://chatgpt.com
           icon: chatgpt.png
-
-      - Reddit:
-          href: https://reddit.com
-          icon: reddit.png
 
     - Daily:
       - YouTube:
@@ -67,9 +59,17 @@ data:
           href: https://mail.google.com
           icon: gmail.png
 
+      - Reddit:
+          href: https://reddit.com
+          icon: reddit.png
+
       - Calendar:
           href: https://calendar.google.com
           icon: google-calendar.png
+
+      - SDE:
+          href: https://learn.sde.dk/login/index.php
+          icon: school.png
 
   widgets.yaml: |
     - search:
