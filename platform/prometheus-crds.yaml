@@ -15,11 +15,23 @@ spec:
       parameters:
         - name: crds.enabled
           value: "true"
+
         - name: prometheus.enabled
           value: "false"
+
         - name: alertmanager.enabled
           value: "false"
+
         - name: grafana.enabled
+          value: "false"
+
+        - name: nodeExporter.enabled
+          value: "false"
+
+        - name: kubeStateMetrics.enabled
+          value: "false"
+
+        - name: prometheusOperator.enabled
           value: "false"
 
   destination:
