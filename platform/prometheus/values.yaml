@@ -10,7 +10,6 @@ alertmanager:
 prometheus:
   prometheusSpec:
     retention: 7d
-    storageSpec: {}
 
 nodeExporter:
   enabled: true
