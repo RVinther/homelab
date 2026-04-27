@@ -1,13 +1,12 @@
 loki:
-  enabled: true
-  persistence:
+  auth_enabled: false
+
+singleBinary:
+  replicas: 1
+
+gateway:
+  enabled: false
+
+monitoring:
+  dashboards:
     enabled: false
-
-promtail:
-  enabled: true
-
-grafana:
-  enabled: false
-
-prometheus:
-  enabled: false
