@@ -21,7 +21,16 @@ kubeProxy:
 
 prometheus:
   prometheusSpec:
-    retention: 7d
+    retention: 15d
+    storageSpec:
+      volumeClaimTemplate:
+        spec:
+          storageClassName: local-path
+          accessModes:
+            - ReadWriteOnce
+          resources:
+            requests:
+              storage: 20Gi
 
 nodeExporter:
   enabled: true
