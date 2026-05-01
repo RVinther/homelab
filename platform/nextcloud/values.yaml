@@ -1,6 +1,9 @@
 nextcloud:
   host: cloud.home
 
+nodeSelector:
+  node-role: storage
+
   existingSecret:
     enabled: true
     secretName: nextcloud-secret
@@ -42,6 +45,12 @@ externalDatabase:
 
 redis:
   enabled: true
+  master:
+    nodeSelector:
+      node-role: storage
+  replica:
+    nodeSelector:
+      node-role: storage
 
 cronjob:
   enabled: true
