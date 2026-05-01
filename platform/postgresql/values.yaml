@@ -4,9 +4,6 @@ auth:
   existingSecret: nextcloud-secret
 
 primary:
-  nodeSelector:
-    node-role: storage
-
   persistence:
     enabled: true
     size: 10Gi
