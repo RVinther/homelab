@@ -1,6 +1,7 @@
 nextcloud:
   host: cloud.home
   username: admin
+
   existingSecret:
     enabled: true
     secretName: nextcloud-secret
@@ -12,13 +13,18 @@ internalDatabase:
 externalDatabase:
   enabled: true
   type: postgresql
+
   host: postgresql.cloud.svc.cluster.local
   database: nextcloud
   user: nextcloud
+
   existingSecret:
     enabled: true
     secretName: nextcloud-secret
-    passwordKey: postgres-password
+    usernameKey: db-username
+    passwordKey: db-password
+    hostKey: db-host
+    databaseKey: db-name
 
 persistence:
   enabled: true
