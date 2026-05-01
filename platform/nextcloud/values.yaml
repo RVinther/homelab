@@ -8,16 +8,14 @@ nextcloud:
     passwordKey: nextcloud-password
 
   configs:
-    overwrite.config.php: |
+    homelab.config.php: |
       <?php
       $CONFIG = array (
         'trusted_domains' =>
         array (
           0 => 'cloud.home',
+          1 => 'homelab',
         ),
-        'overwrite.cli.url' => 'https://cloud.home',
-        'overwritehost' => 'cloud.home',
-        'overwriteprotocol' => 'https',
         'default_phone_region' => 'DK',
         'memcache.local' => '\\OC\\Memcache\\Redis',
         'memcache.locking' => '\\OC\\Memcache\\Redis',
@@ -42,6 +40,12 @@ externalDatabase:
     usernameKey: db-username
     passwordKey: db-password
 
+redis:
+  enabled: true
+
+cronjob:
+  enabled: true
+
 persistence:
   enabled: true
   storageClass: local-path
@@ -52,20 +56,12 @@ ingress:
   className: traefik
 
   annotations:
-    traefik.ingress.kubernetes.io/router.entrypoints: websecure
-
-  tls: true
+    traefik.ingress.kubernetes.io/router.entrypoints: web
 
   hosts:
     - host: cloud.home
       paths:
         - /
-
-redis:
-  enabled: true
-
-cronjob:
-  enabled: true
 
 livenessProbe:
   enabled: false
