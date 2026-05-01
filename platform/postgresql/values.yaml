@@ -1,9 +1,7 @@
 auth:
   username: nextcloud
-  existingSecret: nextcloud-secret
-  secretKeys:
-    adminPasswordKey: postgres-password
   database: nextcloud
+  existingSecret: nextcloud-secret
 
 primary:
   persistence:
