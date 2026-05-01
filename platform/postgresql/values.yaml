@@ -1,0 +1,10 @@
+auth:
+  username: nextcloud
+  password: 2t3EsE115P0g6S
+  database: nextcloud
+
+primary:
+  persistence:
+    enabled: true
+    size: 10Gi
+    storageClass: local-path

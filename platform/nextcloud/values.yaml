@@ -1,0 +1,32 @@
+nextcloud:
+  host: cloud.home
+  username: admin
+  password: admin
+
+internalDatabase:
+  enabled: false
+
+externalDatabase:
+  enabled: true
+  type: postgresql
+  host: postgresql.cloud.svc.cluster.local
+  database: nextcloud
+  user: nextcloud
+  password: 2t3EsE115P0g6S
+
+persistence:
+  enabled: true
+  storageClass: local-path
+  size: 200Gi
+
+ingress:
+  enabled: true
+  className: traefik
+
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web
+
+  hosts:
+    - host: cloud.home
+      paths:
+        - /
