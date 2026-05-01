@@ -4,7 +4,6 @@ nextcloud:
   existingSecret:
     enabled: true
     secretName: nextcloud-secret
-    usernameKey: ""
     passwordKey: nextcloud-admin-password
 
 internalDatabase:
