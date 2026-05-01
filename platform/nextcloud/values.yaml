@@ -42,6 +42,9 @@ externalDatabase:
 
 redis:
   enabled: true
+  architecture: standalone
+  auth:
+    enabled: true
 
 cronjob:
   enabled: true
