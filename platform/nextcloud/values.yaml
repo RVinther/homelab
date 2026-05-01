@@ -34,3 +34,9 @@ ingress:
     - host: cloud.home
       paths:
         - /
+
+livenessProbe:
+  enabled: false
+
+readinessProbe:
+  enabled: false
