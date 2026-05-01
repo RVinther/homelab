@@ -1,11 +1,10 @@
 nextcloud:
   host: cloud.home
-  username: admin
-
   existingSecret:
     enabled: true
     secretName: nextcloud-secret
-    passwordKey: nextcloud-admin-password
+    usernameKey: nextcloud-username
+    passwordKey: nextcloud-password
 
 internalDatabase:
   enabled: false
@@ -13,18 +12,13 @@ internalDatabase:
 externalDatabase:
   enabled: true
   type: postgresql
-
-  host: postgresql.cloud.svc.cluster.local
-  database: nextcloud
-  user: nextcloud
-
   existingSecret:
     enabled: true
     secretName: nextcloud-secret
-    usernameKey: db-username
-    passwordKey: db-password
     hostKey: db-host
     databaseKey: db-name
+    usernameKey: db-username
+    passwordKey: db-password
 
 persistence:
   enabled: true
@@ -34,10 +28,8 @@ persistence:
 ingress:
   enabled: true
   className: traefik
-
   annotations:
     traefik.ingress.kubernetes.io/router.entrypoints: web
-
   hosts:
     - host: cloud.home
       paths:
