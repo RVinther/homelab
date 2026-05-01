@@ -1,6 +1,8 @@
 auth:
   username: nextcloud
-  password: 2t3EsE115P0g6S
+  existingSecret: nextcloud-secret
+  secretKeys:
+    adminPasswordKey: postgres-password
   database: nextcloud
 
 primary:
