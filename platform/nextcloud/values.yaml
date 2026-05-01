@@ -1,10 +1,31 @@
 nextcloud:
   host: cloud.home
+
   existingSecret:
     enabled: true
     secretName: nextcloud-secret
     usernameKey: nextcloud-username
     passwordKey: nextcloud-password
+
+  configs:
+    overwrite.config.php: |
+      <?php
+      $CONFIG = array (
+        'trusted_domains' =>
+        array (
+          0 => 'cloud.home',
+        ),
+        'overwrite.cli.url' => 'https://cloud.home',
+        'overwritehost' => 'cloud.home',
+        'overwriteprotocol' => 'https',
+        'default_phone_region' => 'DK',
+        'memcache.local' => '\\OC\\Memcache\\Redis',
+        'memcache.locking' => '\\OC\\Memcache\\Redis',
+        'redis' => array(
+          'host' => 'nextcloud-redis-master',
+          'port' => 6379,
+        ),
+      );
 
 internalDatabase:
   enabled: false
@@ -12,6 +33,7 @@ internalDatabase:
 externalDatabase:
   enabled: true
   type: postgresql
+
   existingSecret:
     enabled: true
     secretName: nextcloud-secret
@@ -28,12 +50,22 @@ persistence:
 ingress:
   enabled: true
   className: traefik
+
   annotations:
-    traefik.ingress.kubernetes.io/router.entrypoints: web
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+
+  tls: true
+
   hosts:
     - host: cloud.home
       paths:
         - /
+
+redis:
+  enabled: true
+
+cronjob:
+  enabled: true
 
 livenessProbe:
   enabled: false
