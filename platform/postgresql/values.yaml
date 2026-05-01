@@ -2,6 +2,9 @@ auth:
   username: nextcloud
   database: nextcloud
   existingSecret: nextcloud-secret
+  secretKeys:
+    adminPasswordKey: db-password
+    userPasswordKey: db-password
 
 primary:
   persistence:
