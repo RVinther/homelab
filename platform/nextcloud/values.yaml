@@ -15,6 +15,7 @@ nextcloud:
         array (
           0 => 'cloud.home',
           1 => 'homelab',
+          2 => 'homelab.tail28c233.ts.net',
         ),
         'default_phone_region' => 'DK',
         'memcache.local' => '\\OC\\Memcache\\Redis',
