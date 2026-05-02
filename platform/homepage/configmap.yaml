@@ -32,7 +32,7 @@ data:
           icon: prometheus.png
 
       - Promtail:
-          icon: promtail.png
+          icon: file-text
 
     - Networking:
       - Pi-hole:
@@ -67,7 +67,7 @@ data:
           icon: helm.png
 
       - Sealed Secrets:
-          icon: sealed-secrets.png
+          icon: lock
 
     - Daily:
       - Nextcloud:
