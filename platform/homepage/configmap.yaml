@@ -31,6 +31,9 @@ data:
           href: http://grafana.home
           icon: prometheus.png
 
+      - Promtail:
+          icon: promtail.png
+
     - Networking:
       - Pi-hole:
           href: http://192.168.87.60:8081/admin/
@@ -44,6 +47,9 @@ data:
           href: http://192.168.87.1
           icon: router.png
 
+      - Traefik:
+          icon: traefik.png
+
     - Management:
       - GitHub:
           href: https://github.com/RVinther/homelab
@@ -52,6 +58,16 @@ data:
       - ChatGPT:
           href: https://chatgpt.com
           icon: chatgpt.png
+
+    - Services:
+      - Redis:
+          icon: redis.png
+
+      - Helm:
+          icon: helm.png
+
+      - Sealed Secrets:
+          icon: sealed-secrets.png
 
     - Daily:
       - Nextcloud:
