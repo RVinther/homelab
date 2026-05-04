@@ -30,5 +30,12 @@ spec:
       - ServerSideApp=true
 
   ignoreDifferences:
-    - group: batch
-      kind: job
+    - group: apiextensions.k8s.io
+      kind: CustomResourceDefinition
+      jsonPointers:
+        - /spec/preserveUnknownFields
+
+    - group: "*"
+      kind: "*"
+      jsonPointers:
+        - /status
