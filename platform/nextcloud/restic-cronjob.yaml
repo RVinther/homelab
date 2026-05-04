@@ -9,9 +9,6 @@ spec:
     spec:
       template:
         spec:
-          nodeSelector:
-            node-role: utility
-
           containers:
             - name: restic
               image: restic/restic:latest
