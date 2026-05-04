@@ -15,6 +15,9 @@ spec:
     chart: longhorn
     targetRevision: 1.6.2
 
+    helm:
+      skipCrds: false
+
   syncPolicy:
     automated:
       prune: true
