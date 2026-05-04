@@ -67,6 +67,10 @@ ingress:
       paths:
         - /
 
+    - host: homelab.tail28c233.ts.net
+      paths:
+        - /
+
 livenessProbe:
   enabled: false
 
