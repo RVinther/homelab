@@ -11,18 +11,17 @@ spec:
     namespace: longhorn-system
 
   sources:
-    repoURL: https://charts.longhorn.io
-    chart: longhorn
-    targetRevision: 1.6.2i
+    - repoURL: https://charts.longhorn.io
+      chart: longhorn
+      targetRevision: 1.6.2i
+      helm:
+        values: |
+          preUpgradeChecker:
+            jobEnabled: false
 
-    repoURL: https://github.com/RVinther/homelab.git
-    targetRevision: HEAD
-    path: platform/longhorn
-
-    helm:
-      values: |
-        preUpgradeChecker:
-          jobEnabled: false
+    - repoURL: https://github.com/RVinther/homelab.git
+      targetRevision: HEAD
+      path: platform/longhorn
 
   syncPolicy:
     automated:
