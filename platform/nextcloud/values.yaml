@@ -63,12 +63,12 @@ ingress:
     traefik.ingress.kubernetes.io/router.entrypoints: web
 
   hosts:
-    - host: cloud.home
-      paths:
+    - name: cloud.home
+      path:
         - /
 
-    - host: homelab.tail28c233.ts.net
-      paths:
+    - name: homelab.tail28c233.ts.net
+      path:
         - /
 
 livenessProbe:
