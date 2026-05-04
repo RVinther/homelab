@@ -11,7 +11,7 @@ spec:
     namespace: longhorn-system
 
   source:
-    repoURL: https://kubernetes.default.svc
+    repoURL: https://charts.longhorn.io
     chart: longhorn
     targetRevision: 1.6.0
 
