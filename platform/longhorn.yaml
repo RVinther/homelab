@@ -10,10 +10,14 @@ spec:
     server: https://kubernetes.default.svc
     namespace: longhorn-system
 
-  source:
+  sources:
     repoURL: https://charts.longhorn.io
     chart: longhorn
-    targetRevision: 1.6.2
+    targetRevision: 1.6.2i
+
+    repoURL: https://github.com/RVinther/homelab.git
+    targetRevision: HEAD
+    path: platform/longhorn
 
     helm:
       values: |
