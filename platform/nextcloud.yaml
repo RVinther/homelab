@@ -18,6 +18,10 @@ spec:
       targetRevision: HEAD
       ref: values
 
+    - repoURL: https://github.com/RVinther/homelab.git
+      targetRevision: HEAD
+      path: platform/nextcloud
+
   destination:
     server: https://kubernetes.default.svc
     namespace: cloud
