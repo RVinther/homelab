@@ -52,7 +52,7 @@ cronjob:
 
 persistence:
   enabled: true
-  storageClass: longhorn
+  storageClassName: longhorn
   size: 200Gi
 
 ingress:
