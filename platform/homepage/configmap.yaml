@@ -18,6 +18,10 @@ data:
       - PostgreSQL:
           icon: postgresql.png
 
+      - Longhorn:
+          href: http://longhorn.home
+          icon: longhorn.png
+
     - Monitoring:
       - Grafana:
           href: http://grafana.home
