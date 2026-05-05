@@ -73,6 +73,9 @@ data:
       - Sealed Secrets:
           icon: mdi-lock
 
+      - Bitwarden:
+          icon: bitwarden.png
+
     - Daily:
       - Nextcloud:
           href: http://cloud.home
