@@ -1,0 +1,53 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: restic-backup
+  namespace: cloud
+spec:
+  schedule: "0 3 * * *"
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 3
+
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          nodeSelector:
+            kubernetes.io/hostname: node2
+
+          restartPolicy: OnFailure
+
+          containers:
+            - name: restic
+              image: restic/restic:latest
+
+              env:
+                - name: RESTIC_PASSWORD
+                  valueFrom:
+                    secretKeyRef:
+                      name: restic-secret
+                      key: RESTIC_PASSWORD
+
+              command:
+                - /bin/sh
+                - -c
+                - |
+                  restic -r /repo backup /backups
+
+              volumeMounts:
+                - name: backup-source
+                  mountPath: /backups
+
+                - name: restic-repo
+                  mountPath: /repo
+
+          volumes:
+            - name: backup-source
+              hostPath:
+                path: /data/longhorn-backups
+                type: Directory
+
+            - name: restic-repo
+              hostPath:
+                path: /data/restic
+                type: Directory
