@@ -39,9 +39,13 @@ data:
           icon: mdi-file-text
 
     - Networking:
-      - Pi-hole:
-          href: http://192.168.87.60:8081/admin/
-          icon: pi-hole.png
+      - AdGuard Home 1:
+          href: http://192.168.87.60:3000
+          icon: adguard-home.png
+
+      - AdGuard Home 2:
+          href: http://192.168.87.74:3000
+          icon: adguard-home.png
 
       - Tailscale:
           href: https://tailscale.com
@@ -53,6 +57,9 @@ data:
 
       - Traefik:
           icon: traefik.png
+
+      - MetalLB:
+          icon: metallb.png
 
     - Management:
       - GitHub:
