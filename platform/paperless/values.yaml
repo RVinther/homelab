@@ -8,8 +8,6 @@ env:
   PAPERLESS_DBNAME: paperless
   PAPERLESS_DBUSER: paperless
 
-  PAPERLESS_REDIS: redis://paperless-redis-master:6379
-
   PAPERLESS_TIME_ZONE: Europe/Copenhagen
   PAPERLESS_OCR_LANGUAGE: dan+eng
   PAPERLESS_URL: http://paperless.home
@@ -27,16 +25,7 @@ env:
         key: paperless-secret-key
 
 redis:
-  enabled: true
-  architecture: standalone
-
-  auth:
-    enabled: false
-
-  image:
-    registry: docker.io
-    repository: bitnami/redis
-    tag: latest
+  enabled: false
       
 persistence:
   data:
