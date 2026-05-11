@@ -8,7 +8,7 @@ env:
   PAPERLESS_DBNAME: paperless
   PAPERLESS_DBUSER: paperless
 
-  PAPERLESS_REDIS: redis://:$(REDIS_PASSWORD)@paperless-redis-master:6379
+  PAPERLESS_REDIS: redis://paperless-redis-master:6379
 
   PAPERLESS_TIME_ZONE: Europe/Copenhagen
   PAPERLESS_OCR_LANGUAGE: dan+eng
@@ -26,26 +26,13 @@ env:
         name: paperless-secret
         key: paperless-secret-key
 
-  REDIS_PASSWORD:
-    valueFrom:
-      secretKeyRef:
-        name: paperless-secret
-        key: redis-password
-
 redis:
   enabled: true
   architecture: standalone
 
   auth:
-    enabled: true
-    existingSecret: paperless-secret
-    existingSecretPasswordKey: redis-password
-
-  image:
-    registry: docker.io
-    repository: bitnami/redis
-    tag: 7.4.3-debian-12-r0    
-
+    enabled: false
+      
 persistence:
   data:
     enabled: true
