@@ -42,9 +42,28 @@ redis:
     existingSecretPasswordKey: redis-password
 
 persistence:
-  enabled: true
-  storageClassName: longhorn
-  size: 50Gi
+  data:
+    enabled: true
+    storageClass: longhorn
+    accessMode: ReadWriteOnce
+    size: 30Gi
+
+  media:
+    enabled: true
+    storageClass: longhorn
+    accessMode: ReadWriteOnce
+
+  consume:
+    enabled: true
+    storageClass: longhorn
+    accessMode: ReadWriteOnce
+    size: 5Gi
+
+  export:
+    enabled: true
+    storageClass: longhorn
+    accessMode: ReadWriteOnce
+    size: 5Gi
 
 ingress:
   enabled: true
