@@ -52,6 +52,7 @@ persistence:
     enabled: true
     storageClass: longhorn
     accessMode: ReadWriteOnce
+    size: 10Gi
 
   consume:
     enabled: true
