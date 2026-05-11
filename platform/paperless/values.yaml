@@ -1,3 +1,6 @@
+paperless:
+  host: paperless.home
+
 env:
   PAPERLESS_DBENGINE: postgresql
   PAPERLESS_DBHOST: postgres-rw
