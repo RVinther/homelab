@@ -32,6 +32,11 @@ redis:
 
   auth:
     enabled: false
+
+  image:
+    registry: docker.io
+    repository: bitnami/redis
+    tag: 7.4.3-debian-12-r1
       
 persistence:
   data:
