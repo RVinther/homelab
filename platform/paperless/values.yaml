@@ -1,0 +1,66 @@
+env:
+  PAPERLESS_DBENGINE: postgresql
+  PAPERLESS_DBHOST: postgres-rw
+  PAPERLESS_DBPORT: 5432
+  PAPERLESS_DBNAME: paperless
+  PAPERLESS_DBUSER: paperless
+
+  PAPERLESS_REDIS: redis://:$(REDIS_PASSWORD)@paperless-redis-master:6379
+
+  PAPERLESS_TIME_ZONE: Europe/Copenhagen
+  PAPERLESS_OCR_LANGUAGE: dan+eng
+  PAPERLESS_URL: http://paperless.home
+
+  PAPERLESS_DBPASS:
+    valueFrom:
+      secretKeyRef:
+        name: paperless-secret
+        key: db-password
+
+  PAPERLESS_SECRET_KEY:
+    valueFrom:
+      secretKeyRef:
+        name: paperless-secret
+        key: paperless-secret-key
+
+  REDIS_PASSWORD:
+    valueFrom:
+      secretKeyRef:
+        name: paperless-secret
+        key: redis-password
+
+redis:
+  enabled: true
+  architecture: standalone
+
+  auth:
+    enabled: true
+    existingSecret: paperless-secret
+    existingSecretPasswordKey: redis-password
+
+persistence:
+  enabled: true
+  storageClassName: longhorn
+  size: 50Gi
+
+ingress:
+  enabled: true
+  className: traefik
+
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web
+
+  hosts:
+    - host: paperless.home
+      paths:
+        - path: /
+          pathType: Prefix
+
+resources:
+  requests:
+    cpu: 250m
+    memory: 512Mi
+
+  limits:
+    cpu: 1000m
+    memory: 2Gi

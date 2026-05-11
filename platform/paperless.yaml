@@ -1,0 +1,35 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: paperless
+  namespace: argocd
+spec:
+  project: default
+
+  sources:
+    - repoURL: https://charts.gabe565.com
+      chart: paperless-ngx
+      targetRevision: 0.24.1
+      helm:
+        valueFiles:
+          - $values/platform/paperless/values.yaml
+
+    - repoURL: https://github.com/RVinther/homelab.git
+      targetRevision: HEAD
+      ref: values
+
+    - repoURL: https://github.com/RVinther/homelab.git
+      targetRevision: HEAD
+      path: platform/paperless
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: cloud
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
+    syncOptions:
+      - CreateNamespace=true
