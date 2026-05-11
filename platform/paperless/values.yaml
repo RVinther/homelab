@@ -41,6 +41,11 @@ redis:
     existingSecret: paperless-secret
     existingSecretPasswordKey: redis-password
 
+  image:
+    registry: docker.io
+    repository: bitnami/redis
+    tag: 7.4.3-debian-12-r1    
+
 persistence:
   data:
     enabled: true
