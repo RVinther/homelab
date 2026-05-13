@@ -15,7 +15,7 @@ env:
         key: redis-url
 
   PAPERLESS_TIME_ZONE: Europe/Copenhagen
-  PAPERLESS_OCR_LANGUAGE: dan+eng
+  PAPERLESS_OCR_LANGUAGE: eng
   PAPERLESS_URL: http://paperless.home
 
   PAPERLESS_DBPASS:
