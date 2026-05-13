@@ -1,6 +1,3 @@
-paperless:
-  host: paperless.home
-
 env:
   PAPERLESS_DBENGINE: postgresql
   PAPERLESS_DBHOST: postgresql
@@ -16,7 +13,7 @@ env:
 
   PAPERLESS_TIME_ZONE: Europe/Copenhagen
   PAPERLESS_OCR_LANGUAGE: eng
-  PAPERLESS_URL: http://paperless.home
+  PAPERLESS_URL: http://homelab.tail28c233.ts.net
 
   PAPERLESS_DBPASS:
     valueFrom:
