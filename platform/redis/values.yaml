@@ -1,0 +1,11 @@
+architecture: standalone
+
+auth:
+  existingSecret: redis-secret
+  existingSecretPasswordKey: redis-password
+
+master:
+  persistence:
+    enabled: true
+    storageClass: longhorn
+    size: 8Gi

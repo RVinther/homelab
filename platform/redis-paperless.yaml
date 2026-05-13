@@ -1,0 +1,35 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: redis-paperless
+  namespace: argocd
+spec:
+  project: default
+
+  sources:
+    - repoURL: oci://registry-1.docker.io/bitnamicharts
+      chart: redis
+      targetRevision: 8.6.3
+      helm:
+        valueFiles:
+          - $values/platform/redis/values.yaml
+
+    - repoURL: https://github.com/RVinther/homelab.git
+      targetRevision: HEAD
+      ref: values
+
+    - repoURL: https://github.com/RVinther/homelab.git
+      targetRevision: HEAD
+      path: platform/redis
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: cloud
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
+    syncOptions:
+      - CreateNamespace=true
