@@ -14,7 +14,7 @@ env:
         name: redis-secret
         key: redis-password
 
-  PAPERLESS_REDIS: redis://:$REDIS_PASSWORD@redis-paperless-master:6379
+  PAPERLESS_REDIS: redis://:$(REDIS_PASSWORD)@redis-paperless-master:6379
 
   PAPERLESS_TIME_ZONE: Europe/Copenhagen
   PAPERLESS_OCR_LANGUAGE: dan+eng
