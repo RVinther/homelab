@@ -25,7 +25,9 @@ env:
         key: paperless-secret-key
 
 redis:
-  enabled: false
+  auth:
+    existingSecret: redis-secret
+    existingSecretPasswordKey: redis-password
       
 persistence:
   data:
