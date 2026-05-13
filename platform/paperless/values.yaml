@@ -3,7 +3,7 @@ paperless:
 
 env:
   PAPERLESS_DBENGINE: postgresql
-  PAPERLESS_DBHOST: postgres-rw
+  PAPERLESS_DBHOST: postgresql
   PAPERLESS_DBPORT: 5432
   PAPERLESS_DBNAME: paperless
   PAPERLESS_DBUSER: paperless
