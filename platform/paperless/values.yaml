@@ -8,13 +8,11 @@ env:
   PAPERLESS_DBNAME: paperless
   PAPERLESS_DBUSER: paperless
 
- A_REDIS_PASSWORD:
+  PAPERLESS_REDIS:
     valueFrom:
       secretKeyRef:
         name: redis-secret
-        key: redis-password
-
-  PAPERLESS_REDIS: redis://:$(A_REDIS_PASSWORD)@redis-paperless-master:6379/0
+        key: redis-url
 
   PAPERLESS_TIME_ZONE: Europe/Copenhagen
   PAPERLESS_OCR_LANGUAGE: dan+eng
