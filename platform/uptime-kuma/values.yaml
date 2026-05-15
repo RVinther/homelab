@@ -1,0 +1,11 @@
+ingress:
+  enabled: true
+  hosts:
+    - host: kuma.home
+      paths:
+        - path: /
+          pathType: Prefix
+
+volume:
+  size: 5Gi
+  storageClassName: longhorn
