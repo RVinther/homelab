@@ -16,7 +16,7 @@ spec:
       targetRevision: 1.6.2
       helm:
         valueFiles:
-          - $values/platform/longhorn.yaml
+          - $values/platform/values.yaml
 
     - repoURL: https://github.com/RVinther/homelab.git
       targetRevision: HEAD
