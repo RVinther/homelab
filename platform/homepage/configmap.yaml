@@ -27,16 +27,11 @@ data:
           href: http://grafana.home
           icon: grafana.png
 
-      - Logs:
-          href: http://grafana.home
+      - Loki:
           icon: loki.png
 
-      - Metrics:
-          href: http://grafana.home
+      - Prometheus:
           icon: prometheus.png
-
-      - Promtail:
-          icon: text.png
 
       - Uptime-kuma:
           href: http://kuma.home
