@@ -19,6 +19,11 @@ spec:
       targetRevision: HEAD
       ref: values
 
+    - repoURL: https://github.com/RVinther/homelab.git
+      targetRevision: HEAD
+      paths:
+        - path: platform/prometheus
+
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
