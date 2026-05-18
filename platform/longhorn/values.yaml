@@ -1,0 +1,5 @@
+preUpgradeChecker:
+  jobEnabled: false
+
+serviceMonitor:
+  enabled: true

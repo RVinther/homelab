@@ -15,13 +15,16 @@ spec:
       chart: longhorn
       targetRevision: 1.6.2
       helm:
-        values: |
-          preUpgradeChecker:
-            jobEnabled: false
+        valueFiles:
+          - $values/platform/longhorn.yaml
 
     - repoURL: https://github.com/RVinther/homelab.git
       targetRevision: HEAD
       path: platform/longhorn
+
+    - repoURL: https://github.com/RVinther/homelab.git
+      targetRevision: HEAD
+      ref: values
 
   syncPolicy:
     automated:
