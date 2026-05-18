@@ -22,6 +22,10 @@ kubeProxy:
 prometheus:
   prometheusSpec:
     retention: 15d
+
+    serviceMonitorSelectorNilUsesHelmValues: false
+    serviceMonitorNamespaceSelector: {}
+
     storageSpec:
       volumeClaimTemplate:
         spec:
