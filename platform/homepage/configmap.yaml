@@ -36,7 +36,11 @@ data:
           icon: prometheus.png
 
       - Promtail:
-          icon: mdi-file-text
+          icon: text.png
+
+      - Uptime-kuma:
+          href: http://kuma.home
+          icon: uptime-kuma.png
 
     - Networking:
       - AdGuard Home 1:
@@ -84,6 +88,10 @@ data:
           icon: bitwarden.png
 
     - Daily:
+      - Paperless:
+          href: http://paperless.home
+          icon: paperless-ngx.png
+
       - Nextcloud:
           href: http://cloud.home
           icon: nextcloud.png
