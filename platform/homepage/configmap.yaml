@@ -31,6 +31,7 @@ data:
           icon: loki.png
 
       - Prometheus:
+          href: http://prometheus.home
           icon: prometheus.png
 
       - Uptime-kuma:
