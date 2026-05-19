@@ -2,122 +2,213 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: homepage-config
+
 data:
   settings.yaml: |
-    title: Homelab
+    title: RV // HOMELAB
     theme: dark
-    color: slate
-    headerStyle: clean
+    color: zinc
+    headerStyle: boxedWidgets
+    target: _blank
 
-  services.yaml: |
-    - Infrastructure:
-      - ArgoCD:
-          href: http://argocd.home
-          icon: argo-cd.png
-      
-      - PostgreSQL:
-          icon: postgresql.png
+    layout:
+      Operations:
+        style: row
+        columns: 4
 
-      - Longhorn:
-          href: http://longhorn.home
-          icon: longhorn.png
+      Observability:
+        style: row
+        columns: 4
 
-    - Monitoring:
-      - Grafana:
-          href: http://grafana.home
-          icon: grafana.png
+      Network:
+        style: row
+        columns: 3
 
-      - Loki:
-          icon: loki.png
+      Daily Ops:
+        style: row
+        columns: 5
 
-      - Prometheus:
-          href: http://prometheus.home
-          icon: prometheus.png
-
-      - Uptime-kuma:
-          href: http://kuma.home
-          icon: uptime-kuma.png
-
-    - Networking:
-      - AdGuard Home 1:
-          href: http://192.168.87.60:3000
-          icon: adguard-home.png
-
-      - AdGuard Home 2:
-          href: http://192.168.87.74:3000
-          icon: adguard-home.png
-
-      - Tailscale:
-          href: https://tailscale.com
-          icon: tailscale.png
-
-      - Router:
-          href: http://192.168.87.1
-          icon: router.png
-
-      - Traefik:
-          icon: traefik.png
-
-      - MetalLB:
-          icon: metallb.png
-
-    - Management:
-      - GitHub:
-          href: https://github.com/RVinther/homelab
-          icon: github.png
-
-      - ChatGPT:
-          href: https://chatgpt.com
-          icon: chatgpt.png
-
-    - Services:
-      - Redis:
-          icon: redis.png
-
-      - Helm:
-          icon: helm.png
-
-      - Sealed Secrets:
-          icon: mdi-lock
-
-      - Bitwarden:
-          icon: bitwarden.png
-
-    - Daily:
-      - Paperless:
-          href: http://paperless.home
-          icon: paperless-ngx.png
-
-      - Nextcloud:
-          href: http://cloud.home
-          icon: nextcloud.png
-
-      - YouTube:
-          href: https://youtube.com
-          icon: youtube.png
-
-      - Gmail:
-          href: https://mail.google.com
-          icon: gmail.png
-
-      - Reddit:
-          href: https://reddit.com
-          icon: reddit.png
-
-      - Calendar:
-          href: https://calendar.google.com
-          icon: google-calendar.png
-
-      - SDE:
-          href: https://learn.sde.dk/login/index.php
-          icon: google-classroom.png
+      External:
+        style: row
+        columns: 4
+        collapsed: true
 
   widgets.yaml: |
+    - logo:
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/kubernetes.png
+
     - search:
         provider: google
+        focus: false
         target: _blank
 
     - datetime:
+        locale: da-DK
         text_size: xl
+        format:
+          dateStyle: full
+          timeStyle: short
+
+    - resources:
+        cpu: true
+        memory: true
+        disk: /
+
+    - openmeteo:
+        label: Bjørnsholt
+        latitude: 56.15
+        longitude: 9.63
+        timezone: Europe/Copenhagen
+        units: metric
+
+  services.yaml: |
+    - Operations:
+
+        - ArgoCD:
+            href: http://argocd.home
+            description: GitOps control plane
+            icon: argo-cd.png
+            ping: argocd.home
+
+        - Longhorn:
+            href: http://longhorn.home
+            description: Distributed storage
+            icon: longhorn.png
+            ping: longhorn.home
+
+        - Traefik:
+            href: http://traefik.home
+            description: Edge ingress
+            icon: traefik.png
+            ping: traefik.home
+
+        - PostgreSQL:
+            description: Primary database
+            icon: postgresql.png
+
+    - Observability:
+
+        - Grafana:
+            href: http://grafana.home
+            description: Dashboards & analytics
+            icon: grafana.png
+            ping: grafana.home
+
+        - Prometheus:
+            href: http://prometheus.home
+            description: Metrics collection
+            icon: prometheus.png
+            ping: prometheus.home
+
+        - Uptime Kuma:
+            href: http://kuma.home
+            description: Service monitoring
+            icon: uptime-kuma.png
+            ping: kuma.home
+
+        - Loki:
+            description: Centralized logs
+            icon: loki.png
+
+    - Network:
+
+        - AdGuard Primary:
+            href: http://192.168.87.60:3000
+            description: DNS filtering
+            icon: adguard-home.png
+            ping: 192.168.87.60
+
+        - AdGuard Secondary:
+            href: http://192.168.87.74:3000
+            description: Redundant DNS
+            icon: adguard-home.png
+            ping: 192.168.87.74
+
+        - Router:
+            href: http://192.168.87.1
+            description: Gateway
+            icon: mdi-router-network
+            ping: 192.168.87.1
+
+        - Tailscale:
+            href: https://tailscale.com
+            description: Secure mesh VPN
+            icon: tailscale.png
+
+    - Daily Ops:
+
+        - Paperless:
+            href: http://paperless.home
+            description: Document archive
+            icon: paperless-ngx.png
+            ping: paperless.home
+
+        - Nextcloud:
+            href: http://cloud.home
+            description: Personal cloud
+            icon: nextcloud.png
+            ping: cloud.home
+
+        - Gmail:
+            href: https://mail.google.com
+            description: Inbox
+            icon: gmail.png
+
+        - Calendar:
+            href: https://calendar.google.com
+            description: Scheduling
+            icon: google-calendar.png
+
+        - SDE:
+            href: https://learn.sde.dk/login/index.php
+            description: Education portal
+            icon: mdi-school
+
+    - External:
+
+        - GitHub:
+            href: https://github.com/RVinther/homelab
+            description: Infrastructure repo
+            icon: github.png
+
+        - ChatGPT:
+            href: https://chatgpt.com
+            description: AI assistant
+            icon: chatgpt.png
+
+        - Reddit:
+            href: https://reddit.com
+            description: Communities
+            icon: reddit.png
+
+        - YouTube:
+            href: https://youtube.com
+            description: Media
+            icon: youtube.png
 
   bookmarks.yaml: |
+    - DevOps:
+        - Kubernetes Docs:
+            - abbr: K8S
+              href: https://kubernetes.io/docs/
+
+        - Helm Charts:
+            - abbr: HELM
+              href: https://artifacthub.io/
+
+        - Docker Hub:
+            - abbr: DKR
+              href: https://hub.docker.com/
+
+        - Terraform Registry:
+            - abbr: TF
+              href: https://registry.terraform.io/
+
+    - Community:
+        - Homelab:
+            - abbr: LAB
+              href: https://reddit.com/r/homelab
+
+        - Selfhosted:
+            - abbr: SELF
+              href: https://reddit.com/r/selfhosted
