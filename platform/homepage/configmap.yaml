@@ -10,6 +10,7 @@ data:
     color: zinc
     headerStyle: boxedWidgets
     target: _blank
+    statusStyle: dot
 
     layout:
       Operations:
@@ -22,7 +23,7 @@ data:
 
       Network:
         style: row
-        columns: 3
+        columns: 4
 
       Daily Ops:
         style: row
@@ -49,15 +50,15 @@ data:
           dateStyle: full
           timeStyle: short
 
-    - resources:
-        cpu: true
-        memory: true
-        disk: /
+    # IMPORTANT:
+    # Denne viser ressourcer for den node/container Homepage kører på.
+    # Derfor ser du kun ~8GB RAM.
+    # Fjernet for at undgå misvisende data i Kubernetes cluster.
 
     - openmeteo:
-        label: Bjørnsholt
-        latitude: 56.15
-        longitude: 9.63
+        label: Odense
+        latitude: 55.4038
+        longitude: 10.4024
         timezone: Europe/Copenhagen
         units: metric
 
@@ -68,19 +69,19 @@ data:
             href: http://argocd.home
             description: GitOps control plane
             icon: argo-cd.png
-            ping: argocd.home
+            siteMonitor: http://argocd.home
 
         - Longhorn:
             href: http://longhorn.home
             description: Distributed storage
             icon: longhorn.png
-            ping: longhorn.home
+            siteMonitor: http://longhorn.home
 
         - Traefik:
             href: http://traefik.home
             description: Edge ingress
             icon: traefik.png
-            ping: traefik.home
+            siteMonitor: http://traefik.home
 
         - PostgreSQL:
             description: Primary database
@@ -92,19 +93,19 @@ data:
             href: http://grafana.home
             description: Dashboards & analytics
             icon: grafana.png
-            ping: grafana.home
+            siteMonitor: http://grafana.home/login
 
         - Prometheus:
             href: http://prometheus.home
             description: Metrics collection
             icon: prometheus.png
-            ping: prometheus.home
+            siteMonitor: http://prometheus.home/-/healthy
 
         - Uptime Kuma:
             href: http://kuma.home
             description: Service monitoring
             icon: uptime-kuma.png
-            ping: kuma.home
+            siteMonitor: http://kuma.home
 
         - Loki:
             description: Centralized logs
@@ -116,19 +117,19 @@ data:
             href: http://192.168.87.60:3000
             description: DNS filtering
             icon: adguard-home.png
-            ping: 192.168.87.60
+            siteMonitor: http://192.168.87.60:3000
 
         - AdGuard Secondary:
             href: http://192.168.87.74:3000
             description: Redundant DNS
             icon: adguard-home.png
-            ping: 192.168.87.74
+            siteMonitor: http://192.168.87.74:3000
 
         - Router:
             href: http://192.168.87.1
             description: Gateway
             icon: mdi-router-network
-            ping: 192.168.87.1
+            siteMonitor: http://192.168.87.1
 
         - Tailscale:
             href: https://tailscale.com
@@ -141,13 +142,13 @@ data:
             href: http://paperless.home
             description: Document archive
             icon: paperless-ngx.png
-            ping: paperless.home
+            siteMonitor: http://paperless.home
 
         - Nextcloud:
             href: http://cloud.home
             description: Personal cloud
             icon: nextcloud.png
-            ping: cloud.home
+            siteMonitor: http://cloud.home/status.php
 
         - Gmail:
             href: https://mail.google.com
