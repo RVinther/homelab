@@ -1,53 +1,27 @@
 ---
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: argoproj.io/v1alpha1
+kind: Application
 
 metadata:
   name: emulatorjs
-  namespace: gaming
+  namespace: argocd
 
 spec:
-  replicas: 1
+  project: default
 
-  selector:
-    matchLabels:
-      app: emulatorjs
+  source:
+    repoURL: https://github.com/RVinther/homelab.git
+    targetRevision: HEAD
+    path: platform/gaming
+  
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: gaming
 
-  template:
-    metadata:
-      labels:
-        app: emulatorjs
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
 
-    spec:
-      containers:
-        - name: emulatorjs
-          image: lscr.io/linuxserver/emulatorjs:latest
-
-          ports:
-            - containerPort: 3000
-
-          env:
-            - name: TZ
-              value: Europe/Copenhagen
-
-            - name: PUID
-              value: "1000"
-
-            - name: PGID
-              value: "1000"
-
-          volumeMounts:
-            - name: config
-              mountPath: /config
-
-            - name: data
-              mountPath: /data
-
-      volumes:
-        - name: config
-          persistentVolumeClaim:
-            claimName: emulatorjs-config
-
-        - name: data
-          persistentVolumeClaim:
-            claimName: emulatorjs-data
+    syncOptions:
+      - CreateNamespace=true
