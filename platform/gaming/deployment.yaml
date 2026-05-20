@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: emulatorjs
-          image: lscr.io/linuxserver/emulatorjs:latest
+          image: lscr.io/linuxserver/emulatorjs:beta
 
           ports:
             - containerPort: 3000
