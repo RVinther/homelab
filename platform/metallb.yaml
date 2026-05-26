@@ -26,3 +26,10 @@ spec:
 
     syncOptions:
       - CreateNamespace=true
+
+  ignoreDifferences:
+  - group: apiextensions.k8s.io
+    kind: CustomResourceDefinition
+
+  - group: metallb.io
+    kind: L2Advertisement
