@@ -28,13 +28,13 @@ spec:
       - CreateNamespace=true
 
   ignoreDifferences:
-  - group: apiextensions.k8s.io
-    kind: CustomResourceDefinition
+    - group: apiextensions.k8s.io
+      kind: CustomResourceDefinition
 
-  - group: metallb.io
-    kind: L2Advertisement
+    - group: metallb.io
+      kind: L2Advertisement
 
-  - group: admissionregistration.k8s.io
+    - group: admissionregistration.k8s.io
       kind: ValidatingWebhookConfiguration
       jsonPointers:
         - /webhooks/0/clientConfig/caBundle
