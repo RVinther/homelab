@@ -21,7 +21,8 @@ kubeProxy:
 
 prometheus:
   prometheusSpec:
-    retention: 15d
+    retention: 7d
+    scrapeInterval: 60s
 
     serviceMonitorSelectorNilUsesHelmValues: false
     serviceMonitorNamespaceSelector: {}
@@ -34,7 +35,7 @@ prometheus:
             - ReadWriteOnce
           resources:
             requests:
-              storage: 20Gi
+              storage: 10Gi
 
 nodeExporter:
   enabled: true
