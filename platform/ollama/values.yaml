@@ -22,3 +22,6 @@ persistentVolume:
     - ReadWriteOnce
   size: 20Gi
   storageClass: longhorn
+
+securityContext:
+  runAsUser: 0
