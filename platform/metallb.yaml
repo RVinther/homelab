@@ -33,3 +33,8 @@ spec:
 
   - group: metallb.io
     kind: L2Advertisement
+
+  - group: admissionregistration.k8s.io
+      kind: ValidatingWebhookConfiguration
+      jsonPointers:
+        - /webhooks/0/clientConfig/caBundle
