@@ -1,3 +1,4 @@
+---
 name: Validate k3s YAML
 
 on: 
@@ -39,3 +40,5 @@ jobs:
             \( -name "*.yaml" -o -name "*.yml" \) \
             ! -name "values.yaml" \
             | xargs kubeconform -strict -ignore-missing-schemas
+          find platform -name "*.yaml" -o -name "*.yml" \
+          | xargs kubeconform -strict -ignore-missing-schemas
