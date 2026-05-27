@@ -23,7 +23,7 @@ kubeProxy:
 prometheus:
   prometheusSpec:
     retention: 7d
-    scrapeInterval: 60s
+    scrapeInterval: 120s
 
     serviceMonitorSelectorNilUsesHelmValues: false
     serviceMonitorNamespaceSelector: {}
