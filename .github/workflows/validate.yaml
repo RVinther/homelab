@@ -20,3 +20,21 @@ jobs:
 
       - name: Run yamllint
         run: yamllint .
+
+  kubeconform:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install kubeconform
+        run: |
+          curl -L https://github.com/yannh/kubeconform/releases/latest/download/kubeconform-linux-amd64.tar.gz \
+          | tar xz
+          sudo mv kubeconform /usr/local/bin/
+
+      - name: Validate manifests
+        run: |
+          find platform -name "*.yaml" -o -name "*.yml" \
+          | xargs kubeconform -strict -ignore-missing-schemas
