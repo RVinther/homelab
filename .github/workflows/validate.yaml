@@ -1,3 +1,4 @@
+---
 name: Validate k3s YAML
 
 on: 
@@ -19,4 +20,3 @@ jobs:
 
       - name: Run yamllint
         run: yamllint .
-
