@@ -1,3 +1,4 @@
+---
 env:
   PAPERLESS_DBENGINE: postgresql
   PAPERLESS_DBHOST: postgresql
