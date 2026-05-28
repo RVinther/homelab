@@ -20,6 +20,11 @@ kubeScheduler:
 kubeProxy:
   enabled: false
 
+prometheusOperator:
+  prometheusConfigReloader:
+    image:
+      tag: v0.91.0
+
 prometheus:
   prometheusSpec:
     retention: 7d
