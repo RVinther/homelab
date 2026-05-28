@@ -9,3 +9,10 @@ ingress:
   ingressClassName: traefik
   hosts:
     - grafana.home
+
+grafana:
+  persistence:
+    enabled: true
+    type: pvc
+    storageClassName: longhorn-retain
+    size: 5Gi
